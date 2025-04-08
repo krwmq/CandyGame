@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="460" d:DesignHeight="650"
+        x:Class="CandyGame.Views.GameWindow"
+        Title="GameWindow"
+        Width="460" Height="650">
+    <Window.Background>
+        <ImageBrush Source="/Assets/backgroundgame.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <StackPanel>
+        <!-- Üst grid -->
+        <Grid ColumnDefinitions="150, 150, 150" 
+              RowDefinitions="60, 60">
+            <Label Grid.Row="0" Grid.Column="0" Margin="10">Kalan Süre (sn)</Label>
+            <Label Grid.Row="0" Grid.Column="1" Margin="10">Puan</Label>
+            <Label Grid.Row="0" Grid.Column="2" Margin="10">Oyuncu</Label>
+            <Label Grid.Row="1" Grid.Column="0" Margin="10" x:Name="TimeLabel">60</Label>
+            <Label Grid.Row="1" Grid.Column="1" Margin="10" x:Name="ScoreLabel">0</Label>
+            <Label Grid.Row="1" Grid.Column="2" Margin="10" x:Name="isim"></Label>
+        </Grid>
+
+        <!-- Ortadaki grid -->
+        <Grid x:Name="MainGrid" 
+              ColumnDefinitions="50, 50, 50, 50, 50, 50, 50, 50, 50"
+              RowDefinitions="50, 50, 50, 50, 50, 50, 50, 50, 50" Margin="5">
+            <!-- Buraya 81 adet görsel yerleştirilecek -->
+        </Grid>
+                
+        <Label HorizontalAlignment="Center" Margin="10"><Button Click="ButtonStop">Pause</Button></Label>
+    </StackPanel>
+</Window>

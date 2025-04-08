@@ -1,0 +1,72 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CandyGame.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="700"
+        x:Class="CandyGame.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="CandyGame"
+        Width="400" Height="600">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <Window.Background>
+        <ImageBrush Source="/Assets/background.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+
+    <StackPanel Width="400" Height="500" 
+                Margin="10" Spacing="15" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center">
+        <!-- Başlık Alanı -->
+        <Border Margin="5" CornerRadius="10">
+            <TextBlock Margin="5"
+                       
+                       FontSize="24" 
+                       HorizontalAlignment="Center"
+                       Background="#50FFFFFF"
+                       VerticalAlignment="Center"
+                       Text="{Binding Greeting}">
+            </TextBlock>
+        </Border>
+
+        <!-- Form Alanı -->
+        <StackPanel Margin="5" Orientation="Vertical" Spacing="15">
+            <!-- TextBox (isim girme) -->
+            <TextBox Width="350" Height="40" 
+                     Margin="0 5"
+                     HorizontalAlignment="Center"
+                     Text="isminizi giriniz" Name="isimMenu" 
+                     GotFocus="TextBox_GotFocus"/>
+            
+            <Button Width="350" Height="40"
+                    Background="#99FFFFFF"
+                    Margin="0 5" 
+                    HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    FontSize="20"
+                    Click="OyunuAc_Click">Start</Button>
+
+            <!-- En iyiler Button -->
+            <Button Width="350" Height="40"
+                    Background="#75FFFFFF"
+                    Margin="0 5" 
+                    HorizontalAlignment="Center" 
+                    FontSize="18"
+                    Click="OpenWindow1_Click">En iyiler</Button>
+        </StackPanel>
+        <Border Background="#85FFFFFF" CornerRadius="5" Margin="5">
+        <TextBlock Width="350" Height="85" TextWrapping="Wrap">
+            &#10;Oyuna Başlamak İçin İsim Giriniz ve Start'a tıklayınız.
+            Oyuna Başladıktan sonra pause tuşu ile durdurabilirsiniz.
+            Aynı renk şekerleri 3 veya daha fazla kez olacak şekilde yatay olarak
+            veya dikey olarak yan yana getirilerek patlatabilirsiniz.
+        </TextBlock>
+        </Border>
+    </StackPanel>
+</Window>

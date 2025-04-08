@@ -1,0 +1,6 @@
+Guest7 196
+Guest1 150
+Guest2 73
+Guest5 53
+Guest4 22
+Guest9 0
